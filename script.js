@@ -139,7 +139,7 @@ const leftLoop = new Tone.Loop((time) => {
 
 //create midi note loop
 const rightLoop = new Tone.Loop((time) => {
-  piano.triggerAttackRelease(dragonScales[scaleIndex][noteIndexRight], noteDuration, time, midiVelRight);
+  piano.triggerAttackRelease(chosenScale[scaleIndex][noteIndexRight], noteDuration, time, midiVelRight);
 }, noteValue);
 
 
