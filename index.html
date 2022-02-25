@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Biometric Music</title>
+  <link rel="stylesheet" type="text/css" href="appstyle.css">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.3/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/webmidi@next/dist/iife/webmidi.iife.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.31/Tone.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <video class="input_video"></video>
+    <div class="canvas-container">
+    <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+    </div>
+  </div>
+  
+  <div class="control-panel">
+    <button type="button" id="analysis">What animal zodiac am I?</button><br>
+
+    Intelligence: <span id="intelligence" class="rangeValue">0.0</span> %<br>
+    Charisma: <span id="charisma" class="rangeValue">0.0</span> %<br>
+    Kindness: <span id="kindness" class="rangeValue">0.0</span> %<br>
+    Energy: <span id="energy" class="rangeValue">0.0</span> %<br>
+    Courage: <span id="courage" class="rangeValue">0.0</span> %<br>
+    Patience: <span id="patience" class="rangeValue">0.0</span> %<br>
+
+    <b>Your predicted animal zodiac is: </b><label class="label"
+      for="predictedZodiac"></label>
+        <select name="predictedZodiac" id="predictedZodiac">
+          <option value="tiger">Tiger</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="dragon" selected>Dragon</option>
+        </select><br>
+    <hr>
+
+    <div class="select">
+        <label for="videoSource">Camera </label><select id="videoSource"></select>
+    </div>
+
+    <b>Start Music<div class="tooltip circle"><sup><i>i</i></sup>
+      <span class="tooltiptext">Check box to start music</span>
+      </div></b><input id="startSound" type="checkbox"><br>
+  </div> 
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
